@@ -383,7 +383,7 @@
   .final-cta{
     background:linear-gradient(180deg,var(--green-950) 0%,#071812 100%);color:var(--cream-2);text-align:center;
   }
-  .final-cta h2{font-size:clamp(28px,4.5vw,44px);}
+  .final-cta h2{font-size:clamp(28px,4.5vw,44px);color:var(--cream-2);}
   .final-cta .stack-words{margin:26px 0;font-size:16.5px;color:rgba(251,247,238,0.8);line-height:2;}
   .final-cta-note{margin-top:30px;font-size:13.5px;color:var(--gold-soft);letter-spacing:0.06em;font-style:italic;}
 
@@ -1114,8 +1114,7 @@
         <p style="margin-top:10px;color:var(--ink-soft);">Votre demande a bien été enregistrée par Mansassi Trade.</p>
         <p style="margin-top:18px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);" data-i18n="form.success.refLabel">Votre référence de dossier</p>
         <p id="formReference" style="font-family:'Fraunces',serif;font-size:30px;color:var(--green-900);margin-top:4px;font-weight:600;"></p>
-        <p style="margin-top:12px;font-size:14px;color:var(--ink-soft);" data-i18n="form.success.keep">Conservez cette référence pour toute communication concernant votre dossier.</p>
-        <a href="#" class="btn btn-whatsapp" id="formWaContinue" target="_blank" rel="noreferrer" style="margin-top:20px;" data-i18n="form.success.waBtn">Continuer sur WhatsApp</a>
+        <p style="margin-top:12px;font-size:14px;color:var(--ink-soft);" data-i18n="form.success.keep">Conservez cette référence. Notre équipe étudiera votre demande et vous contactera directement au numéro indiqué.</p>
       </div>
     </div>
   </div>
@@ -1296,15 +1295,7 @@ if (form){
       }
 
       // Success: show the reference and offer WhatsApp as a next step.
-      const waText =
-        "Bonjour Mansassi Trade,\n\n" +
-        "Je viens de soumettre ma demande " + request.reference + ".\n\n" +
-        "Type de demande :\nSourcing & Recherche\n\n" +
-        "Je recherche :\n" + data.get("need") + "\n\n" +
-        (data.get("destination") ? "Destination :\n" + data.get("destination") + "\n" : "");
-
       document.getElementById("formReference").textContent = request.reference;
-      document.getElementById("formWaContinue").href = buildWaLink(waText);
       form.style.display = "none";
       formSuccess.style.display = "block";
       formSuccess.scrollIntoView({behavior:"smooth", block:"center"});
@@ -1798,7 +1789,7 @@ const translations = {
   "form.submit": "Envoyer ma demande",
   "form.success.title": "Demande enregistrée avec succès.",
   "form.success.refLabel": "Votre référence de dossier :",
-  "form.success.keep": "Gardez cette référence — elle permet de suivre votre dossier.",
+  "form.success.keep": "Gardez cette référence. Notre équipe étudiera votre demande et vous contactera directement au numéro indiqué.",
   "form.success.waBtn": "Continuer sur WhatsApp",
   "final.title": "Vous avez quelque chose en tête ?<br>Montrez-nous.",
   "final.words": "Une photo.<br>Une référence.<br>Un produit.<br>Une idée.<br>On commence par chercher.",
@@ -2051,7 +2042,7 @@ const translations = {
   "form.submit": "Send my request",
   "form.success.title": "Request successfully recorded.",
   "form.success.refLabel": "Your case reference:",
-  "form.success.keep": "Keep this reference — it lets you track your case.",
+  "form.success.keep": "Keep this reference. Our team will review your request and contact you directly using the number provided.",
   "form.success.waBtn": "Continue on WhatsApp",
   "final.title": "Have something in mind?<br>Show us.",
   "final.words": "A photo.<br>A reference.<br>A product.<br>An idea.<br>We start by searching.",
